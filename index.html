@@ -154,9 +154,11 @@ body {
       panels[i].classList.toggle('active', i === index);
     });
   }
+    document.getElementById("bigger-text").addEventListener("click", () => {
+    document.body.classList.toggle("big-text");
+  });
+
 </script>
-document.getElementById("bigger-text").addEventListener("click", () => {
-  document.body.classList.toggle("big-text");
-});
+
 </body>
 </html>
