@@ -224,6 +224,20 @@ body {
   background: rgba(0,0,0,0.05);
   border-radius: 6px;
 }
+    .tabcontent {
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.tabcontent.active {
+  opacity: 1;
+}
+    .tablink[aria-selected="true"] {
+  border-bottom: 3px solid green;
+}
+    body {
+  letter-spacing: 0.02em;
+}
   </style>
 </head>
 
