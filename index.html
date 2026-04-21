@@ -14,12 +14,6 @@ body {
   color: #222;
 }
 
-/* POWIĘKSZANIE */
-.big-text { font-size: 1.2rem; }
-.big-text h1 { font-size: 3rem; }
-.big-text h2 { font-size: 1.8rem; }
-
-/* MENU */
 .tabs {
   display: flex;
   align-items: center;
@@ -40,15 +34,13 @@ body {
   border-bottom: 3px solid black;
 }
 
-/* PRZYCISKI PO PRAWEJ */
 .tools {
   margin-left: auto;
   display: flex;
   gap: 0.5rem;
 }
 
-#bigger-text,
-#contrast {
+#bigger-text, #contrast {
   padding: 0.6rem 1rem;
   background: white;
   border: 1px solid #ccc;
@@ -56,7 +48,6 @@ body {
   cursor: pointer;
 }
 
-/* SEKCJE */
 .tabcontent {
   display: none;
   padding: 2rem;
@@ -70,33 +61,6 @@ body {
   display: block;
 }
 
-/* DLACZEGO WARTO */
-.why-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.why-item {
-  background: #f9f9f9;
-  padding: 1rem;
-  border-radius: 10px;
-}
-
-/* SZYBKIE INFO */
-.info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.info-box {
-  background: #f3f3f3;
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-/* ZDJĘCIA */
 .photo {
   width: 100%;
   max-width: 600px;
@@ -105,7 +69,18 @@ body {
   border-radius: 10px;
 }
 
-/* KONTRAST */
+.why-grid, .info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.why-item, .info-box {
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
 .high-contrast {
   background: black;
   color: white;
@@ -135,60 +110,63 @@ body {
 
 <!-- STRONA GŁÓWNA -->
 <section id="home" role="tabpanel" class="tabcontent active">
-  <h1>Przewodnik po Budapeszcie</h1>
+<h1>Przewodnik po Budapeszcie</h1>
 
-  <p>
-  Budapeszt to jedno z najpiękniejszych miast Europy, łączące historię, kulturę i relaks w termalnych kąpieliskach.
-  </p>
+<p>
+Budapeszt to jedno z najpiękniejszych miast Europy, łączące historię, kulturę i relaks w termalnych kąpieliskach. Spaceruj nad Dunajem, odkrywaj zabytki i poznaj wyjątkową atmosferę stolicy Węgier. Ten przewodnik pomoże Ci zaplanować idealną podróż. Ta strona to przewodnik po Budapeszcie, który pomoże Ci odkryć najważniejsze atrakcje, poznać historię miasta oraz zaplanować udaną podróż. Znajdziesz tu informacje o najciekawszych miejscach, praktyczne wskazówki oraz inspiracje do zwiedzania zarówno zabytkowej Budy, jak i tętniącego życiem Pesztu.
+</p>
 
-  <h2>Dlaczego warto odwiedzić Budapeszt?</h2>
+<h2>Dlaczego warto odwiedzić Budapeszt?</h2>
 
-  <div class="why-grid">
-    <div class="why-item">
-      <h3>🏛️ Historia</h3>
-      <p>Pełno zabytków i historii.</p>
-    </div>
+<div class="why-grid">
+<div class="why-item"><strong>🏛️ Bogata historia i zabytki</strong><p>Budapeszt zachwyca licznymi zabytkami sięgającymi czasów rzymskich.</p></div>
+<div class="why-item"><strong>🌉 Malownicze widoki nad Dunajem</strong><p>Dunaj dzieli miasto na Budę i Peszt.</p></div>
+<div class="why-item"><strong>♨️ Słynne kąpieliska termalne</strong><p>Miasto nazywane jest „stolicą term”.</p></div>
+<div class="why-item"><strong>🍲 Kuchnia węgierska</strong><p>Gulasz, langosz i wiele więcej.</p></div>
+<div class="why-item"><strong>🌃 Życie nocne</strong><p>Ruin pubs – wyjątkowy klimat.</p></div>
+</div>
 
-    <div class="why-item">
-      <h3>🌉 Widoki</h3>
-      <p>Piękne panoramy nad Dunajem.</p>
-    </div>
-
-    <div class="why-item">
-      <h3>♨️ Termy</h3>
-      <p>Relaks w kąpieliskach.</p>
-    </div>
-
-    <div class="why-item">
-      <h3>🍲 Kuchnia</h3>
-      <p>Gulasz i langosz.</p>
-    </div>
-  </div>
 </section>
 
 <!-- INFORMACJE -->
 <section id="info" role="tabpanel" class="tabcontent">
-  <h2>Informacje ogólne</h2>
 
-  <div class="info-grid">
-    <div class="info-box">📍 Stolica: Budapeszt</div>
-    <div class="info-box">💰 Waluta: forint</div>
-    <div class="info-box">🗣️ Język: węgierski</div>
-    <div class="info-box">✈️ Lotnisko: im. Ferenca Liszta</div>
-  </div>
+<h2>Informacje ogólne</h2>
 
-  <img src="https://bartekwpodrozy.pl/wp-content/uploads/2024/10/Depositphotos_215817550_XL-2048x1366.jpg" class="photo">
+<p>
+Budapeszt to stolica Węgier, położona w północnej części kraju nad Dunajem. W mieście posługuje się językiem węgierskim...
+</p>
+
+<img src="https://bartekwpodrozy.pl/wp-content/uploads/2024/10/Depositphotos_215817550_XL-2048x1366.jpg" class="photo">
+
+<h2>Szybkie informacje</h2>
+
+<div class="info-grid">
+<div class="info-box">📍 Stolica: Budapeszt</div>
+<div class="info-box">💰 Waluta: forint</div>
+<div class="info-box">🗣️ Język: węgierski</div>
+<div class="info-box">✈️ Lotnisko: im. Ferenca Liszta</div>
+</div>
+
 </section>
 
 <!-- ATRAKCJE -->
 <section id="atrakcje" role="tabpanel" class="tabcontent">
-  <h2>Atrakcje</h2>
 
-  <ul>
-    <li>Zamek Królewski</li>
-    <li>Parlament</li>
-    <li>Kościół św. Macieja</li>
-  </ul>
+<h2>Atrakcje</h2>
+
+<ul>
+<li>
+Kościół św. Macieja
+<img src="https://img.freepik.com/premium-zdjecie/kosciol-sw-macieja.jpg" class="photo">
+</li>
+
+<li>
+Parlament
+<img src="https://www.budowle.pl/files/photos/building/parlament.jpg" class="photo">
+</li>
+</ul>
+
 </section>
 
 </main>
