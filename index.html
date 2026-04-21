@@ -71,6 +71,28 @@
       padding: 2rem;
       background: white;
     }
+    high-contrast {
+  background: black;
+  color: white;
+}
+
+.high-contrast .tabcontent {
+  background: black;
+  color: white;
+}
+
+.high-contrast .tabs {
+  background: #111;
+}
+
+.high-contrast button {
+  color: white;
+  border-color: white;
+}
+
+.high-contrast a {
+  color: yellow;
+}
 body {
   background: #eaf7ee;
 }
@@ -110,7 +132,9 @@ body {
   <button role="tab" aria-selected="false" aria-controls="atrakcje" id="tab-atrakcje" class="tablink">Atrakcje</button>
 </nav>
 <button id="bigger-text">Powiększ tekst</button>
+<button id="contrast">Wysoki kontrast</button>
 <main>
+  
 
 <section id="Strona główna" role="tabpanel" aria-labelledby="tab-home" class="tabcontent active">
   <header>
@@ -189,6 +213,9 @@ W mieście działa jedna z najstarszych linii metra na świecie — linia M1, wp
     document.getElementById("bigger-text").addEventListener("click", () => {
     document.body.classList.toggle("big-text");
   });
+  document.getElementById("contrast").addEventListener("click", () => {
+  document.body.classList.toggle("high-contrast");
+});
 </script>
 
 </body>
