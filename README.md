@@ -1,79 +1,77 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Przewodnik po Budapeszcie</title>
 
-<title>Przewodnik po Budapeszcie</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      background: #f5f5f5;
+      color: #222;
+    }
 
-<style>
-  body {
-    font-family: system-ui, sans-serif;
-    margin: 0;
-    line-height: 1.6;
-    background: #f5f5f5;
-    color: #222;
-  }
+    header {
+      padding: 2rem;
+    }
 
-  header {
-    padding: 2rem;
-  }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
 
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
+    h2 {
+      font-size: 1.4rem;
+      font-weight: normal;
+    }
 
-  h2 {
-    font-size: 1.4rem;
-    font-weight: normal;
-  }
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: #eaeaea;
+    }
 
-  /* Tabs */
-  .tabs {
-    display: flex;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
-    background: #eaeaea;
-  }
+    .tablink {
+      background: none;
+      border: 2px solid transparent;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-size: 1rem;
+    }
 
-  .tablink {
-    background: none;
-    border: 2px solid transparent;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    font-size: 1rem;
-  }
+    .tablink:hover,
+    .tablink:focus {
+      border-bottom: 2px solid #000;
+      outline: none;
+    }
 
-  .tablink:hover,
-  .tablink:focus {
-    border-bottom: 2px solid #000;
-    outline: none;
-  }
+    .tablink[aria-selected="true"] {
+      font-weight: bold;
+      border-bottom: 3px solid #000;
+    }
 
-  .tablink[aria-selected="true"] {
-    font-weight: bold;
-    border-bottom: 3px solid #000;
-  }
+    /* Content */
+    .tabcontent {
+      display: none;
+      padding: 2rem;
+      background: white;
+    }
 
-  /* Content */
-  .tabcontent {
-    display: none;
-    padding: 2rem;
-    background: white;
-  }
+    .tabcontent.active {
+      display: block;
+    }
 
-  .tabcontent.active {
-    display: block;
-  }
-
-  /* Focus (ważne dla dostępności) */
-  :focus-visible {
-    outline: 3px solid #005fcc;
-    outline-offset: 2px;
-  }
-
-</style>
+    /* Focus (dostępność) */
+    :focus-visible {
+      outline: 3px solid #005fcc;
+      outline-offset: 2px;
+    }
+  </style>
 </head>
 
 <body>
