@@ -178,6 +178,43 @@ body {
    .intro {
   font-weight: normal;
 } 
+    @media (max-width: 768px) {
+
+  .tabs {
+    flex-wrap: wrap;
+  }
+
+  .tools {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+  }
+
+  .tabcontent {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .why-grid,
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+}
+    @media (max-width: 500px) {
+  .tablink {
+    flex: 1 1 100%;
+    text-align: left;
+  }
+}
   </style>
 </head>
 
