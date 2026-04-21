@@ -1,10 +1,137 @@
-<div class="tabs">
-<button class="tablink active" onclick="openTab(event,'home')">Home</button>
-<button class="tablink" onclick="openTab(event 'info')">Informacje ogólne</button> 
-<button class="tablink" onclick="openTab(event 'atrakcje')">Atrakcje</button>   
-</div>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Przewodnik po Budapeszcie</title>
 
-<div id="home" class="tab"> 
-<h1> Przewodnik po Budapeszcie
-<h2></h2>Najważniejsze informacje dla podróżujących do Budapesztu</p>
-</div>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    header {
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: normal;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: #eaeaea;
+    }
+
+    .tablink {
+      background: none;
+      border: 2px solid transparent;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .tablink:hover,
+    .tablink:focus {
+      border-bottom: 2px solid #000;
+      outline: none;
+    }
+
+    .tablink[aria-selected="true"] {
+      font-weight: bold;
+      border-bottom: 3px solid #000;
+    }
+
+    /* Content */
+    .tabcontent {
+      display: none;
+      padding: 2rem;
+      background: white;
+    }
+
+    .tabcontent.active {
+      display: block;
+    }
+
+    /* Focus (dostępność) */
+    :focus-visible {
+      outline: 3px solid #005fcc;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="tabs" role="tablist" aria-label="Sekcje strony">
+  <button role="tab" aria-selected="true" aria-controls="home" id="tab-home" class="tablink">Home</button>
+  <button role="tab" aria-selected="false" aria-controls="info" id="tab-info" class="tablink">Informacje ogólne</button>
+  <button role="tab" aria-selected="false" aria-controls="atrakcje" id="tab-atrakcje" class="tablink">Atrakcje</button>
+</nav>
+
+<main>
+
+<section id="home" role="tabpanel" aria-labelledby="tab-home" class="tabcontent active">
+  <header>
+    <h1>Przewodnik po Budapeszcie</h1>
+    <h2>Najważniejsze informacje dla podróżujących do Budapesztu</h2>
+  </header>
+</section>
+
+<section id="info" role="tabpanel" aria-labelledby="tab-info" class="tabcontent">
+  <h2>Informacje ogólne</h2>
+  <p>Budapeszt to stolica Węgier, znana z pięknej architektury i termalnych kąpielisk.</p>
+</section>
+
+<section id="atrakcje" role="tabpanel" aria-labelledby="tab-atrakcje" class="tabcontent">
+  <h2>Atrakcje</h2>
+  <p>Najważniejsze miejsca: Parlament, Zamek Królewski, Łaźnie Széchenyi.</p>
+</section>
+
+</main>
+
+<script>
+  const tabs = document.querySelectorAll('[role="tab"]');
+  const panels = document.querySelectorAll('[role="tabpanel"]');
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => activateTab(index));
+
+    tab.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        tabs[(index + 1) % tabs.length].focus();
+      }
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        tabs[(index - 1 + tabs.length) % tabs.length].focus();
+      }
+      if (e.key === 'Enter' || e.key === ' ') {
+        activateTab(index);
+      }
+    });
+  });
+
+  function activateTab(index) {
+    tabs.forEach((tab, i) => {
+      tab.setAttribute('aria-selected', i === index);
+      panels[i].classList.toggle('active', i === index);
+    });
+  }
+</script>
+
+</body>
+</html>
