@@ -116,9 +116,28 @@ body {
       outline: 3px solid #005fcc;
       outline-offset: 2px;
     }
-  #bigger-text,
+ #bigger-text,
 #contrast {
   margin: 1rem 2rem;
+  padding: 0.7rem 1.2rem;   /* większe */
+  font-size: 1.1rem;        /* większy tekst */
+  border-radius: 8px;       /* zaokrąglenie */
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* efekt hover */
+#bigger-text:hover,
+#contrast:hover {
+  background: #f0f0f0;
+}
+
+/* focus dla dostępności */
+#bigger-text:focus-visible,
+#contrast:focus-visible {
+  outline: 3px solid #005fcc;
 }
   </style>
 </head>
